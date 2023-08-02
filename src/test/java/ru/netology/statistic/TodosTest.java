@@ -31,5 +31,9 @@ class TodosTest {
         assertFalse(simpleTask.matches("Трубка"));
         assertTrue(epic.matches("Молоко"));
         assertFalse(epic.matches("Задача"));
+        Task[] result1 = todos.search("Молоко");
+        Assertions.assertEquals(1, result1.length);
+        Task[] result2 = todos.search("Кефир");
+        Assertions.assertEquals(0, result2.length);
     }
 }
